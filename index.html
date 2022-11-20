@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+    </head>
+    <body data-controller ="drag">
+
+        <main class="p-6 h-full">
+            <div class="grid grid-cols-5">
+                <section id="myDocument" class="col-span-3 .myDocument">
+                    <div class="shadow-lg w-full p-8 ">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed aliquam beatae tenetur vel earum, ut perspiciatis vitae fuga hic necessitatibus, mollitia nostrum nam sequi inventore quasi. Illum, quasi? Minima, beatae!
+                        </p>
+
+                    </div>
+                </section>
+                <p></p>
+                <section class="col-span-1 flex flex-col justify-between">
+                    
+                    <div id="myDiv" class="myDiv p-5 bg-violet-700 rounded-md  z-10 cursor-move" data-drag-target="divDragable" data-action="mousedown->drag#clonDrag">
+                        <p class="text-white">Drag and Drop</p>
+                    </div>
+                    
+                    
+                    <div class="flex justify-end">
+                        <button id="myButton" class="bg-violet-700 rounded-md text-white px-6 py-4 hover:bg-violet-500">Click</button>
+                    </div>
+                    
+                </section>
+            </div>
+            
+        </main>
+        <script type="module" src="js/index.js"></script>
+        <!-- <script type="module" src="js/drag.js" async defer></script> -->
+        <!-- <script type="module" src="js/daggable.js" async defer></script> -->
+    </body>
+</html>
