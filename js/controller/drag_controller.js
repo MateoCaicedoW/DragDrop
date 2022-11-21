@@ -1,6 +1,6 @@
 import { Controller } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
 
-
+let clon;
 export default class extends Controller {
   static targets = ["divDragable", "container"]
   static values = { cont: Number }
@@ -12,17 +12,13 @@ export default class extends Controller {
   }
 
   clonDrag(){
-    let clon = this.divDragableTarget.cloneNode(true);
+    clon = this.divDragableTarget.cloneNode(true);
     clon.style.position = "absolute";
     clon.attributes.removeNamedItem("data-action");
     clon.classList.remove("relative");
     this.contValue++;
     clon.setAttribute("id", this.contValue);
-    clon.addEventListener("mouseout", () => {
-      if (this.divDragableTarget.getBoundingClientRect().x == clon.getBoundingClientRect().x) {
-        clon.remove();
-      }
-    });
+    clon.addEventListener("mouseout", this.out);
 
     this.containerTarget.appendChild(clon);
     this.dragElement(clon);
@@ -61,6 +57,12 @@ export default class extends Controller {
       // stop moving when mouse button is released:
       document.onmouseup = null;
       document.onmousemove = null;
+    }
+  }
+
+  out(){
+    if (this.divDragableTarget.getBoundingClientRect().x == clon.getBoundingClientRect().x) {
+      clon.remove();
     }
   }
 
