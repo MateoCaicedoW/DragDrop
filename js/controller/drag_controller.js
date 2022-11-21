@@ -1,20 +1,22 @@
 import { Controller } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
 
 export default class extends Controller {
-  static targets = [ "divDragable"]
+  static targets = ["divDragable", "container"]
+
 
     clonDrag(){
       let clon = this.divDragableTarget.cloneNode(true);
       clon.style.position = "absolute";
-  
-      console.log(clon);
-  
-      var posicion = this.divDragableTarget.getBoundingClientRect();
-      clon.style.top = posicion.top + "px";
-      clon.style.left = posicion.left + "px";
-      clon.style.zIndex = "100";
-  
-      document.body.appendChild(clon);
+      clon.attributes.removeNamedItem("data-action");
+      clon.classList.remove("relative");
+
+      clon.addEventListener("mouseout", () => {
+        if (this.divDragableTarget.getBoundingClientRect().x == clon.getBoundingClientRect().x) {
+          clon.remove();
+        }
+      });
+
+      this.containerTarget.appendChild(clon);
       this.dragElement(clon);
       
     }
@@ -51,16 +53,7 @@ export default class extends Controller {
         // stop moving when mouse button is released:
         document.onmouseup = null;
         document.onmousemove = null;
-        // var posicion = elmnt.getBoundingClientRect();
-        // button.style.position = "absolute";
-        // button.style.top = posicion.top + "px";
-        // button.style.left = posicion.left + "px";
-        
-  
       }
     }
-
-
-
 
 }
