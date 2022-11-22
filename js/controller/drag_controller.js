@@ -26,17 +26,16 @@ export default class extends Controller {
     
   }
 
-  dragElement(elmnt) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    elmnt.onmousedown = dragMouseDown;
+  dragElement(HTMLElement) {
+    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    HTMLElement.onmousedown = dragMouseDown;
     
-    function dragMouseDown(e) {
+    function dragMouseDown(e){
       e.preventDefault();
       // get the mouse cursor position at startup:
       pos3 = e.clientX;
       pos4 = e.clientY;
 
-      // console.log(pos3, pos4);
       document.onmouseup = closeDragElement;
       // call a function whenever the cursor moves:
       document.onmousemove = elementDrag;
@@ -51,8 +50,8 @@ export default class extends Controller {
       pos4 = e.clientY;
 
       // set the element's new position:
-      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      HTMLElement.style.top = (HTMLElement.offsetTop - pos2) + "px";
+      HTMLElement.style.left = (HTMLElement.offsetLeft - pos1) + "px";
     }
   
     const closeDragElement = () => {
