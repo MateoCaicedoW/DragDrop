@@ -1,7 +1,7 @@
 import { Controller } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
 
 export default class extends Controller {
-  static targets = ["divDragable", "container"]
+  static targets = ["divDraggable", "container"]
 
   connect() {
     if (localStorage.getItem("element") != null) {
@@ -10,13 +10,13 @@ export default class extends Controller {
   }
 
   clonDrag(){
-    let clon = this.divDragableTarget.cloneNode(true);
+    let clon = this.divDraggableTarget.cloneNode(true);
     clon.style.position = "absolute";
     clon.attributes.removeNamedItem("data-action");
     clon.classList.remove("relative");
 
     clon.addEventListener("mouseout", () => {
-      if (this.divDragableTarget.getBoundingClientRect().x == clon.getBoundingClientRect().x) {
+      if (this.divDraggableTarget.getBoundingClientRect().x == clon.getBoundingClientRect().x) {
         clon.remove();
       }
     });
